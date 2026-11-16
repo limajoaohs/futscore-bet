@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FutScore Bet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="/">Fut<span>Score</span> Bet</a>
+    <nav id="nav-usuario"></nav>
+  </header>
+
+  <main class="layout">
+    <section>
+      <div class="abas" role="tablist">
+        <button class="aba ativa" data-aba="jogos" role="tab">Jogos</button>
+        <button class="aba" data-aba="apostas" role="tab">Minhas apostas</button>
+        <button class="aba" data-aba="admin" role="tab" hidden>Admin</button>
+      </div>
+      <div id="conteudo" aria-live="polite"></div>
+    </section>
+
+    <aside class="bilhete" id="bilhete" aria-label="Bilhete de aposta"></aside>
+  </main>
+
+  <footer class="rodape">
+    Proibido para menores de 18 anos. Plataforma de demonstração com <strong>créditos virtuais</strong> — sem dinheiro real. Jogue com responsabilidade.
+  </footer>
+
+  <dialog id="modal">
+    <form method="dialog" id="form-auth" class="cartao">
+      <h2 id="modal-titulo">Entrar</h2>
+      <div id="campos-cadastro" hidden>
+        <label>Nome <input name="nome" autocomplete="name"></label>
+        <label>Usuário <input name="username" autocomplete="username"></label>
+        <label>Endereço <input name="endereco" autocomplete="street-address"></label>
+      </div>
+      <label>E-mail <input name="email" type="email" required autocomplete="email"></label>
+      <label>Código de acesso (6 dígitos) <input name="codigo" inputmode="numeric" pattern="\d{6}" maxlength="6" required autocomplete="current-password"></label>
+      <p class="erro" id="erro-auth" role="alert"></p>
+      <button class="btn primario" type="submit" id="btn-auth">Entrar</button>
+      <button class="btn link" type="button" id="alternar-auth">Não tem conta? Cadastre-se e ganhe 1.000 créditos</button>
+      <button class="btn link" type="button" value="cancel" id="fechar-modal">Fechar</button>
+    </form>
+  </dialog>
+
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
